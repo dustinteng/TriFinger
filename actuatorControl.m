@@ -1,9 +1,10 @@
-%Project TriFinger MATLAB Controlling ARDUINO V3
+%Project TriFinger MATLAB Controlling one arm
 %UCSD 2021
 %this code is meant to control a single arm at the same time
 
-clc,clear,close all
 
+clc,clear,close all
+function motorControl(theta)
 %creating arduino object
 ard = arduino('COM6','Mega2560','Libraries','Servo');
 %change max and min pulse to change the actual angle,
@@ -14,7 +15,7 @@ go = true;
 %text sleep
 ReadTime = 1;
 %setting up a variable for the angle now
-lastAngle = 90;
+servoLastAngle = 90;
 %iteration number
 n = 40;
 %speed, do not change tSleep if you don't know what you are doing
@@ -23,3 +24,4 @@ tSleep  = 1/speed/10; %the time sleep for for loop
 
 
 
+end
